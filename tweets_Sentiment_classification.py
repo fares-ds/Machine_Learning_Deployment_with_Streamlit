@@ -39,6 +39,7 @@ print('\n============Message Preprocessing============')
 vectorizer = TfidfVectorizer(ngram_range=(1, 2), max_df=0.9, min_df=2, stop_words='english')
 X_train_vect = vectorizer.fit_transform(X_train)
 X_test_vect = vectorizer.transform(X_test)
+pickle.dump(vectorizer, open('models/tfidf.sav', 'wb'))
 
 print('Training and testing data shape after pre-processing:')
 print(f'X_Train shape: {X_train_vect.shape}, y_train shape: {y_train.shape}')
