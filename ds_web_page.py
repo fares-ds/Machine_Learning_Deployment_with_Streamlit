@@ -21,7 +21,7 @@ def predict_tweet(model, text):
 
 def target_value(target):
 	if target:
-		return 'Disater'
+		return 'Disaster'
 	return 'Not Disaster'
 
 st.title('Disaster Tweets Classification')
@@ -63,10 +63,10 @@ text
 
 # Text words count
 st.header('Logistic Regression: ')
-lr_result
+st.warning(lr_result)
 
 st.header('Support Vector Machine: ')
-svm_result
+st.warning(svm_result)
 
 st.header('Naive Bayes: ')
-nb_result
+st.warning(nb_result)
