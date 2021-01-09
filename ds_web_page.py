@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
+from PIL import Image
 
 # print('Uploading ML models')
 lr_model = pickle.load(open('models/Logistic_Regression.sav', 'rb'))
@@ -24,6 +25,13 @@ def target_value(target):
 	return 'Not Disaster'
 
 st.title('Disaster Tweets Classification')
+st.markdown("""
+This app performs simple tweets classification into Disaster or Not
+* **GitHub repo**: [Machine_Learning_Deployment_with_Streamlit](https://github.com/fares-ds/Machine_Learning_Deployment_with_Streamlit)
+* **Data**: [Natural Language Processing with Disaster Tweets](https://www.kaggle.com/c/nlp-getting-started/data)
+	""")
+image = Image.open('images/data_analysis.png')
+st.image(image, use_column_width=True)
 st.markdown("""
 Twitter has become an important communication channel in times of emergency.
 The ubiquitousness of smartphones enables people to announce an emergency 
