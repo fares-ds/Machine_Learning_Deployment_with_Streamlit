@@ -48,6 +48,8 @@ st.header('Enter Your tweet here: ')
 text_input = ''
 text = st.text_area('Text input', text_input, height=250)
 
+st.button('Make Prediction!')
+
 lr_result = target_value(predict_tweet(lr_model, text))
 svm_result = target_value(predict_tweet(svm_model, text))
 nb_result = target_value(predict_tweet(nb_model, text))
