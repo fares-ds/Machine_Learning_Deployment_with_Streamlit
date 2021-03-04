@@ -8,6 +8,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import LinearSVC
 from sklearn.naive_bayes import MultinomialNB
+from xgboost import XGBClassifier
 
 from sklearn.metrics import accuracy_score, classification_report
 
@@ -54,3 +55,6 @@ svm_y_pred = train_model('Support Vector Machine', svm_model, X_train_vect, X_te
 
 nb_model = MultinomialNB()
 nb_y_pred = train_model('Naive Bayes', nb_model, X_train_vect, X_test_vect, y_train, y_test)
+
+xgb_model = XGBClassifier()
+xgb_y_pred = train_model('XGBoost', xgb_model, X_train_vect, X_test_vect, y_train, y_test)
